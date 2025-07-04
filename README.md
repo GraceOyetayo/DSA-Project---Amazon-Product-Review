@@ -62,19 +62,21 @@ The dataset was gotten by scraping information from Amazon product pages, includ
      3 products had a rating of 5.0 
    
 5. What is the average actual price vs the discounted price by category?
-  Using a pivot table:
+
+   Using a pivot table:
   Rows: Category
   Values: Actual Price → Average
   Discounted Price → Average
  
-6. Which products have the highest number of reviews?
+7. Which products have the highest number of reviews?
 
    Sort Rating Count column in the dataset in descending order
    About 5 products as the highest
    
-7. How many products have a discount of 50% or more?
+8. How many products have a discount of 50% or more?
 
   Added a conditional column (Discount above average): =IF(Discount_percentage >= 50, "Yes", "No")
+  
   Then used a COUNTIF('Discount above average','Yes')
   
   
@@ -86,11 +88,13 @@ The dataset was gotten by scraping information from Amazon product pages, includ
   Values: Product name → Count
 
   An histogram chart was created using the table and the rating distribution is rightly skewed.
+  
   More product has high rating compared to lower ratings.
    
 9. What is the total potential revenue (actual_price × rating_count) by category?
 
   Total potential revenue by category (Actual Price × Rating Count)
+  
   Added calculated column (Potential revenue): =Actual Price * Rating Count
 
   Using Pivot Table:
@@ -106,3 +110,4 @@ The dataset was gotten by scraping information from Amazon product pages, includ
 
 Document the key steps in your analysis, including formulas used, pivot tables created, or charts generated. 
 
+A dashboard was created using Microsoft Excel [link](
