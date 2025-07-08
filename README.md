@@ -38,50 +38,49 @@ The dataset was gotten by scraping information from Amazon product pages, includ
 ## Analysis Steps:
 ### Exploratory Data Analysis
 
-### 
-1. What is the average discount percentage by product category?
+### Analysis:
+##### 1. What is the average discount percentage by product category?
    
    Average discount percentage by product category was gotten using pivot table.
    
-2. How many products are listed under each category?
+##### 2. How many products are listed under each category?
 
    Count of products in each category by creating a pivot table:
     Rows: Category (Main)
     Values: Product Name → set to Count
 
-3. The total number of reviews per category -
+##### 3. The total number of reviews per category -
 
-   Pivot Table:
+  Using Pivot Table:
     Rows: Category
     Values: Rating Count → Sum
 
-4. Products have the highest average ratings -
+##### 4. Products have the highest average ratings -
 
     Sorted the dataset by the Rating column (descending)
     Pick top entries
      3 products had a rating of 5.0 
    
-5. What is the average actual price vs the discounted price by category?
+##### 5. What is the average actual price vs the discounted price by category?
 
    Using a pivot table:
   Rows: Category
   Values: Actual Price → Average
   Discounted Price → Average
  
-6. Which products have the highest number of reviews?
+##### 6. Which products have the highest number of reviews?
 
    Sort Rating Count column in the dataset in descending order
    About 5 products as the highest
    
-7. How many products have a discount of 50% or more?
+##### 7. How many products have a discount of 50% or more?
 
   Added a conditional column (Discount above average): =IF(Discount_percentage >= 50, "Yes", "No")
   
   Then used a COUNTIF('Discount above average','Yes')
   
   
-8. What is the distribution of product ratings (e.g., how many products are rated 3.0, 
-    4.0, etc.)?
+##### 8. What is the distribution of product ratings (e.g., how many products are rated 3.0, 4.0, etc.)?
 
   Using a pivot table:
   Rows: Rating
@@ -91,7 +90,7 @@ The dataset was gotten by scraping information from Amazon product pages, includ
   
   More product has high rating compared to lower ratings.
    
-9. What is the total potential revenue (actual_price × rating_count) by category?
+##### 9. What is the total potential revenue (actual_price × rating_count) by category?
 
   Total potential revenue by category 
   
@@ -101,8 +100,7 @@ The dataset was gotten by scraping information from Amazon product pages, includ
   Rows: Category
   Values: Potential Revenue → Sum
   
-10. What is the number of unique products per price range bucket (e.g., <₹200, 
-₹200–₹500, >₹500)?
+##### 10. What is the number of unique products per price range bucket (e.g., <₹200, ₹200–₹500, >₹500)?
 
 Since the actual price range is large:
 Minimum actual price in dataset = ₹39
@@ -111,36 +109,37 @@ Maximum actual price in dataset = ₹139900
 The price bucket was randomlyand systematically grouped into 10 buckets
 
 Added a conditional column with actual price range buckets as follows:
-<₹250
-₹250 - ₹500
-₹501-₹1000
-₹1001-₹2000
-₹2001-₹5000
-₹5001-₹10000
-₹10001-₹20000
-₹20001-₹50000
-₹50001 - ₹10000
->₹100000
+<₹250, ₹250-₹500,  ₹501-₹1000,  ₹1001-₹2000,  ₹2001-₹5000,  ₹5001-₹10000,  ₹10001-₹20000,  ₹20001-₹50000,  ₹50001 - ₹10000,  >₹100000
 
   Using Pivot Table:
   Rows: Price Range Buckets
   Values: Product name → Count
   
-11. How does the rating relate to the level of discount?
+##### 11. How does the rating relate to the level of discount?
 
 Using a scatter plot, rating versus discount percentage. 
 They are negatively correlated as average rating increases, level of discount decreases.
 The
     
-12. How many products have fewer than 1,000 reviews?
+##### 12. How many products have fewer than 1,000 reviews?
 
 Added a conditional column (Reviews less than 1000): =IF(rating count < 1000, "Yes", " ")
 Then COUNTIF is used to count the number of products with fewer thwn 1000 reviews: =COUNTIF(Reviews less than 1000, "Yes")
 
-ANSWER: 328
+*ANSWER:* 328
 
-13. Which categories have products with the highest discounts?
+##### 13. Which categories have products with the highest discounts?
    
+Sorting the discount percentage column in descending order
+
+The categories with products that has up to 90% discount are:
+
+---   Computers&Accessories 94%
+
+---   Electronics 91%
+
+---   Home&Kitchen 90%
+![image](https://github.com/user-attachments/assets/d200fd7e-4d39-4152-914c-d3e7a45ae22b)
 
     
 14. Identify the top 5 products in terms of rating and number of reviews combined.
