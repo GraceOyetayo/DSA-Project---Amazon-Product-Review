@@ -68,12 +68,12 @@ The dataset was gotten by scraping information from Amazon product pages, includ
   Values: Actual Price → Average
   Discounted Price → Average
  
-7. Which products have the highest number of reviews?
+6. Which products have the highest number of reviews?
 
    Sort Rating Count column in the dataset in descending order
    About 5 products as the highest
    
-8. How many products have a discount of 50% or more?
+7. How many products have a discount of 50% or more?
 
   Added a conditional column (Discount above average): =IF(Discount_percentage >= 50, "Yes", "No")
   
@@ -93,7 +93,7 @@ The dataset was gotten by scraping information from Amazon product pages, includ
    
 9. What is the total potential revenue (actual_price × rating_count) by category?
 
-  Total potential revenue by category (Actual Price × Rating Count)
+  Total potential revenue by category 
   
   Added calculated column (Potential revenue): =Actual Price * Rating Count
 
@@ -102,12 +102,51 @@ The dataset was gotten by scraping information from Amazon product pages, includ
   Values: Potential Revenue → Sum
   
 10. What is the number of unique products per price range bucket (e.g., <₹200, 
-₹200–₹500, >₹500)? 
-15. How does the rating relate to the level of discount? 
-16. How many products have fewer than 1,000 reviews? 
-17. Which categories have products with the highest discounts? 
-18. Identify the top 5 products in terms of rating and number of reviews combined.
+₹200–₹500, >₹500)?
 
-Document the key steps in your analysis, including formulas used, pivot tables created, or charts generated. 
+Since the actual price range is large:
+Minimum actual price in dataset = ₹39
+Maximum actual price in dataset = ₹139900
 
-A dashboard was created using Microsoft Excel [link](
+The price bucket was randomlyand systematically grouped into 10 buckets
+
+Added a conditional column with actual price range buckets as follows:
+<₹250
+₹250 - ₹500
+₹501-₹1000
+₹1001-₹2000
+₹2001-₹5000
+₹5001-₹10000
+₹10001-₹20000
+₹20001-₹50000
+₹50001 - ₹10000
+>₹100000
+
+  Using Pivot Table:
+  Rows: Price Range Buckets
+  Values: Product name → Count
+  
+11. How does the rating relate to the level of discount?
+
+Using a scatter plot, rating versus discount percentage. 
+They are negatively correlated as average rating increases, level of discount decreases.
+The
+    
+12. How many products have fewer than 1,000 reviews?
+
+Added a conditional column (Reviews less than 1000): =IF(rating count < 1000, "Yes", " ")
+Then COUNTIF is used to count the number of products with fewer thwn 1000 reviews: =COUNTIF(Reviews less than 1000, "Yes")
+
+ANSWER: 328
+
+13. Which categories have products with the highest discounts?
+   
+
+    
+14. Identify the top 5 products in terms of rating and number of reviews combined.
+
+
+## Viusalization of findings
+
+A dashboard was created using Microsoft Excel 
+The excel file with the pivot tables and dashboard [link](https://docs.google.com/spreadsheets/d/1W3RuW_-uOv2crwDoNntI8vE5aP_wMKiw/edit?usp=drive_link&ouid=117505765858476215827&rtpof=true&sd=true)
