@@ -55,11 +55,13 @@ The dataset was gotten by scraping information from Amazon product pages, includ
     Rows: Category
     Values: Rating Count → Sum
 
-##### 4. Products have the highest average ratings -
+##### 4. Which products have the highest average ratings?
 
     Sorted the dataset by the Rating column (descending)
-    Pick top entries
-     3 products had a rating of 5.0 
+    
+    Pick top entries: Three products had a rating of 5.0 
+    
+![Products with highest rating]("C:\Users\USER\OneDrive\Pictures\Productswith5.0.png")
    
 ##### 5. What is the average actual price vs the discounted price by category?
 
@@ -71,8 +73,8 @@ The dataset was gotten by scraping information from Amazon product pages, includ
 ##### 6. Which products have the highest number of reviews?
 
    Sort Rating Count column in the dataset in descending order
-   About 3 products as the highest
-
+   
+   About 5 products as the highest    
    
    
 ##### 7. How many products have a discount of 50% or more?
@@ -122,6 +124,7 @@ Added a conditional column with actual price range buckets as follows:
 Using a scatter plot, rating versus discount percentage. 
 They are negatively correlated as average rating increases, level of discount decreases.
 The
+![Scatterplot image]("C:\Users\USER\OneDrive\Pictures\relationship.png")
     
 ##### 12. How many products have fewer than 1,000 reviews?
 
