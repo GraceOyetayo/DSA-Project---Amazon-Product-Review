@@ -43,17 +43,20 @@ The dataset was gotten by scraping information from Amazon product pages, includ
    
    Average discount percentage by product category was gotten using pivot table.
    
+   
 ##### 2. How many products are listed under each category?
 
    Count of products in each category by creating a pivot table:
     Rows: Category (Main)
     Values: Product Name → set to Count
+    
 
 ##### 3. The total number of reviews per category -
 
   Using Pivot Table:
     Rows: Category
     Values: Rating Count → Sum
+    
 
 ##### 4. Which products have the highest average ratings?
 
@@ -62,6 +65,7 @@ The dataset was gotten by scraping information from Amazon product pages, includ
     Pick top entries: Three products had a rating of 5.0 
     
 ![Products with highest rating]("C:\Users\USER\OneDrive\Pictures\Productswith5.0.png")
+
    
 ##### 5. What is the average actual price vs the discounted price by category?
 
@@ -69,6 +73,7 @@ The dataset was gotten by scraping information from Amazon product pages, includ
   Rows: Category
   Values: Actual Price → Average
   Discounted Price → Average
+  
  
 ##### 6. Which products have the highest number of reviews?
 
@@ -93,6 +98,7 @@ The dataset was gotten by scraping information from Amazon product pages, includ
   An histogram chart was created using the table and the rating distribution is rightly skewed.
   
   More product has high rating compared to lower ratings.
+  
    
 ##### 9. What is the total potential revenue (actual_price × rating_count) by category?
 
@@ -103,6 +109,7 @@ The dataset was gotten by scraping information from Amazon product pages, includ
   Using Pivot Table:
   Rows: Category
   Values: Potential Revenue → Sum
+  
   
 ##### 10. What is the number of unique products per price range bucket (e.g., <₹200, ₹200–₹500, >₹500)?
 
@@ -119,12 +126,14 @@ Added a conditional column with actual price range buckets as follows:
   Rows: Price Range Buckets
   Values: Product name → Count
   
+  
 ##### 11. How does the rating relate to the level of discount?
 
 Using a scatter plot, rating versus discount percentage. 
 They are negatively correlated as average rating increases, level of discount decreases.
 The
 ![Scatterplot image]("C:\Users\USER\OneDrive\Pictures\relationship.png")
+
     
 ##### 12. How many products have fewer than 1,000 reviews?
 
@@ -132,6 +141,7 @@ Added a conditional column (Reviews less than 1000): =IF(rating count < 1000, "Y
 Then COUNTIF is used to count the number of products with fewer thwn 1000 reviews: =COUNTIF(Reviews less than 1000, "Yes")
 
 *ANSWER:* 328
+
 
 ##### 13. Which categories have products with the highest discounts?
    
@@ -152,6 +162,8 @@ The categories with products that has up to 90% discount are:
 Added a calculaed column (Rating and Review combined): =Rating + (Rating count/1000)
 
 The Rating and Review combined column is then sorted in descending order. The top 5 products is then selected.
+
+*ANSWER:* B002PD61Y4,  B002SZEOLG,  B003B00484,  B003L62T7W,  B004IO5BMQ
 
 
 ## Viusalization of findings
