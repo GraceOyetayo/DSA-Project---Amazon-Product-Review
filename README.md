@@ -71,7 +71,9 @@ The dataset was gotten by scraping information from Amazon product pages, includ
 ##### 6. Which products have the highest number of reviews?
 
    Sort Rating Count column in the dataset in descending order
-   About 5 products as the highest
+   About 3 products as the highest
+
+   
    
 ##### 7. How many products have a discount of 50% or more?
 
@@ -139,10 +141,14 @@ The categories with products that has up to 90% discount are:
 ---   Electronics 91%
 
 ---   Home&Kitchen 90%
-![image](https://github.com/user-attachments/assets/d200fd7e-4d39-4152-914c-d3e7a45ae22b)
+
 
     
-14. Identify the top 5 products in terms of rating and number of reviews combined.
+##### 14. Identify the top 5 products in terms of rating and number of reviews combined.
+
+Added a calculaed column (Rating and Review combined): =Rating + (Rating count/1000)
+
+The Rating and Review combined column is then sorted in descending order. The top 5 products is then selected.
 
 
 ## Viusalization of findings
